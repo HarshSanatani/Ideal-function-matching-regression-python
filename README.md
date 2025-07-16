@@ -1,86 +1,70 @@
-# README for Bike Sharing Demand Prediction  
+# README for Function Matching using Supervised Learning  
 
 ## Project Overview  
-This project involves building a **multi-linear regression model** to predict bike rental demand based on environmental and seasonal factors. The analysis explores how features like temperature, humidity, wind speed, and time-based variables influence bike-sharing usage patterns.  
+This project focuses on **identifying the most appropriate mathematical functions** that fit a given labeled dataset using supervised learning principles. It simulates pattern recognition and curve fitting by evaluating predefined candidate functions against training data, aiming to approximate the underlying function that generated the observations.  
 
 ## Objective  
-- Develop a predictive model to forecast daily/hourly bike rental demand.  
-- Identify key factors that significantly impact bike-sharing usage.  
-- Provide actionable insights for optimizing bike availability, pricing, and promotions.  
+- Determine which candidate function best represents the relationship between input-output pairs in the training data.  
+- Calculate and compare errors between actual and predicted outputs.  
+- Select the best-fitting function based on defined threshold criteria.  
 
-## Dataset  
-The dataset includes historical bike-sharing data with the following key features:  
-- **Environmental factors**: Temperature, humidity, wind speed, weather conditions.  
-- **Time-based variables**: Hour of the day, day of the week, season, holiday indicators.  
-- **Target variable**: Number of bike rentals (demand).  
+## Applications  
+- Model selection for regression tasks.  
+- Pattern recognition in scientific or engineering data.  
+- Foundational understanding of supervised learning without relying on high-level ML libraries.  
 
-## Approach  
-1. **Exploratory Data Analysis (EDA)**:  
-   - Analyzed trends, correlations, and distributions in the data.  
-   - Visualized relationships between features and bike demand.  
+## Methodology  
+1. **Data Ingestion**:  
+   - Load training dataset (input-output pairs) and predefined candidate functions.  
 
-2. **Data Preprocessing**:  
-   - Handled outliers and missing values.  
-   - Scaled numerical features for model consistency.  
-   - Encoded categorical variables.  
+2. **Function Matching**:  
+   - Compute the **Sum of Squared Errors (SSE)** between each candidate function and the training data.  
 
-3. **Feature Selection**:  
-   - Used statistical methods (p-values, Variance Inflation Factor - VIF) to retain significant predictors.  
-   - Addressed multicollinearity to improve model robustness.  
+3. **Threshold-Based Selection**:  
+   - Identify functions where the error falls within acceptable limits.  
 
-4. **Model Development**:  
-   - Built a multi-linear regression model using **scikit-learn**.  
-   - Evaluated assumptions (linearity, homoscedasticity, normality of residuals).  
+4. **Visualization**:  
+   - Plot training data alongside top-performing candidate functions for qualitative comparison.  
 
-5. **Model Validation**:  
-   - Split data into training and testing sets.  
-   - Applied cross-validation to ensure generalizability.  
-   - Assessed performance using **R² score, RMSE, and MAE**.  
+## Key Features  
+✅ **Error-Driven Selection**: Uses SSE to objectively rank candidate functions.  
+✅ **Transparent Process**: No black-box models; emphasizes manual computation for learning.  
+✅ **Visual Comparison**: Matplotlib plots to validate function fits.  
+✅ **Scalable Design**: Modular structure for adding new candidate functions or datasets.  
 
-6. **Interpretability**:  
-   - Analyzed regression coefficients to explain feature impact on demand.  
+## Project Structure  
+```bash
+├── data/            # Training data and candidate function datasets  
+├── notebooks/       # Jupyter notebooks for analysis  
+├── src/             # Python scripts (optional modular functions)  
+├── output/          # Graphs and result summaries  
+└── README.md  
+```  
 
-## Key Findings  
-✅ **Top Demand Drivers**:  
-   - **Temperature**: Higher temperatures positively correlate with increased rentals.  
-   - **Weather Conditions**: Clear days see significantly more rentals than rainy/snowy days.  
-   - **Time-Based Trends**: Peak demand occurs during commuting hours (8 AM, 5 PM) and weekends.  
+## Tools & Technologies  
+- **Python 3.x**  
+- **NumPy**: Numerical operations and error calculations.  
+- **Pandas**: Data handling (if datasets are in tabular form).  
+- **Matplotlib**: Visualization of data and function fits.  
+- **Jupyter Notebook**: Interactive analysis and documentation.  
 
-✅ **Model Performance**:  
-   - Achieved a high **R² score** (explained variance) and low **RMSE/MAE**, indicating strong predictive accuracy.  
-   - Residual analysis confirmed model assumptions were met.  
+## Key Learning Outcomes  
+🔹 Implemented supervised learning principles **without high-level ML libraries**.  
+🔹 Gained hands-on experience in **model selection via error metrics**.  
+🔹 Improved understanding of **function approximation** and performance evaluation.  
 
-✅ **Business Insights**:  
-   - **Optimal Bike Allocation**: Increase supply during warm, clear days and peak hours.  
-   - **Dynamic Pricing**: Adjust pricing based on predicted high/low demand periods.  
-   - **Promotions**: Target weekends and holidays to boost off-peak rentals.  
-
-## Repository Structure  
-- **Notebooks**: Contains the Jupyter Notebook with full code (EDA, modeling, evaluation).  
-- **Data**: Directory for the dataset (e.g., `bike_sharing.csv`).  
-- **Results**: Visualizations, performance metrics, and key insights.  
-
-## How to Use  
-1. Clone the repository.  
-2. Install dependencies (see below).  
-3. Run the Jupyter Notebook to reproduce the analysis or make predictions.  
-
-## Dependencies  
-- Python 3.x  
-- Libraries: Pandas, NumPy, Scikit-learn, Matplotlib, Seaborn, Jupyter Notebook  
-
-## Built With  
-- **Python**  
-- **Scikit-learn** (Regression modeling)  
-- **Pandas/NumPy** (Data manipulation)  
-- **Matplotlib/Seaborn** (Visualizations)  
+## Future Improvements  
+🔸 **Automated Threshold Tuning**: Cross-validation to optimize error thresholds.  
+🔸 **Extended Regression Techniques**: Polynomial regression or spline fitting.  
+🔸 **Integration with Scikit-learn**: Benchmarking against standard regression models.  
 
 ## Author  
-[Your Name]  
-Email: [Your Email]  
+**Harshraj Chavda**  
+Aspiring Data Analyst | MSc. Data Science  
+GitHub: [@HarshSanatani](https://github.com/HarshSanatani)  
 
 ## License  
 This project is open-source and available under the **MIT License**.  
 
 ---  
-**Tags**: #MachineLearning #Regression #PredictiveAnalytics #BikeSharing #DataScience
+**Tags**: #SupervisedLearning #FunctionApproximation #Regression #DataScience #Python
